@@ -1,0 +1,124 @@
+<script>
+    /*Developed by Marcelo Agil May 6 2022*/
+</script>
+
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Freelancer Payment Calculator - calculate payment by days/hours for freelancers</title>
+  <meta name="description" content="Simply insert a rule such as number of hours per day, days per week, value and define start/end.">
+  <link href="assets/css/bootstrap-5-only-used.css?v=1" rel="stylesheet">
+  <script src="assets/js/app.js?v=1"></script>
+
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
+    <link rel="manifest" href="assets/favicon/site.webmanifest">
+    <link rel="mask-icon" href="assets/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="mb-3 gy-5">
+                <h1>Freelancer payment calculator</h1>
+                <h2>Calculate payments based on worked hours</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="mb-3">
+                <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                      <button class="nav-link active" id="btnCalculateTab" type="button" role="tab" aria-controls="pills-calculate" aria-selected="true">Calculator</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                      <button class="nav-link" id="btnConfigTab" type="button" role="tab" aria-controls="pills-configuration" aria-selected="false">How to</button>
+                    </li>
+                  </ul>
+            </div>
+        </div>
+        <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active" id="pills-calculate" role="tabpanel" aria-labelledby="calculate-tab">
+                <div class="row align-itens-start ">
+                    <div class="col">
+                        <label class="form-label">Year</label>
+                        <input type="text" id="year" class="form-control">
+                    </div>
+                    <div class="col">
+                        <label class="form-label">Month</label>
+                        <select class="form-control" id="monthList">
+                            <option value="" selected>Select a month</option>
+                            <option value="0">January</option>
+                            <option value="1">February</option>
+                            <option value="2">March</option>
+                            <option value="3">April</option>
+                            <option value="4">May</option>
+                            <option value="5">June</option>
+                            <option value="6">July</option>
+                            <option value="7">August</option>
+                            <option value="8">September</option>
+                            <option value="9">October</option>
+                            <option value="10">November</option>
+                            <option value="11">December</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col gy-2">
+                        <button type="button" class="btn btn-primary float-end" id="btnReport">Calc</button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col gy-5">
+                        <label for=""></label>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Price per hour</td>
+                                    <td>Days worked</td>
+                                    <td>Hours worked</td>
+                                    <td>Payment ($)</td>
+                                </tr>
+                            </thead>
+                            <tbody id="resultDisplayer">
+                            </tbody>
+                        </table>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="tab-pane fade" id="pills-config" role="tabpanel" aria-labelledby="configure-tab">
+                <div class="row">
+                    <div class="col">
+                        <label class="form-label">How to</label><br>
+                        <p>
+                        <ul>
+                            <li>In "days" inform from 1 (sunday) to 7 (monday). The script will find how many times that day exists in informed month and calculate the hours worked.</li>
+                            <li>Right after "day" you may inform number of hours (you can see the default is 7,5).</li>
+                            <li>You can add more freelancers by copying the default freelancer object example and pasting after "}," .</li>
+                            <li>If anything goes wrong, you can restart clicking on "Reset" button. This will bring the default config back.</li>
+                        </ul>
+                        </p>
+                    </div>
+                    <div class="col">
+                        <div class="mb-3">
+                            <label class="form-label">Configure here</label>
+                            <textarea id="fpcConfigTextarea" class="form-control" rows="20"></textarea>
+                        </div>
+                        <div class="mb-3 p-2">
+                            <button type="button" class="btn btn-dark float-begin" id="btnResetConfig">Reset</button>
+                            <button type="button" class="btn btn-primary float-end" id="btnSetConfig">Save</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          </div>
+    </div>
+    
+</body>
+</html>
